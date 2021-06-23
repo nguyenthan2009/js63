@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(_name, _weight, _speed) {
+            this.name = _name;
+            this.weight = _weight;
+            this.speed = _speed;
+            this.status = true;
+        }
+
+        sound(text){
+            alert(this.name + " "+text);
+        }
+    }
+    class Cat{
+        constructor(_name, _weight, _speed) {
+            this.name = _name;
+            this.weight = _weight;
+            this.speed = _speed;
+        }
+        sound(text){
+            alert(this.name +" " + text);
+        }
+        catchRat(rat){
+            if (this.speed>rat.speed){
+                alert(this.name + " da bat dc chuot" + rat.name);
+            }else{
+                alert( this.name +" không bắt được" + rat.name )
+            }
+        }
+
+        eatRat(rat){
+            if (rat.status){
+                this.weight += rat.weight;
+                rat.status = false;
+                alert(this.name + " da bat an chuot" + rat.name);
+            }
+        }
+    }
+
+    let Jerry = new Rat("jerry", 70, 15);
+    let Map = new Rat("Map", 76, 17);
+    let Tom = new Cat("Tom", 57, 16);
+    Tom.eatRat(Jerry)
+    Tom.catchRat(Map)
+    Tom.sound("meo meo")
+    Jerry.sound("chit chit")
+</script>
+
+
+
+
+</body>
+</html>
